@@ -43,7 +43,7 @@ def load_model(model_id, sess, model_dir=MODEL_DIR):
         assert os.path.exists(model_path)
 
     with tf.gfile.GFile(model_path, 'rb') as f:
-        graph_def = tf.GraphDef()
+        graph_def = tf.compat.v1.GraphDef()
     graph_def.ParseFromString(f.read())
     sess.graph.as_default()
     tf.import_graph_def(graph_def, name='')

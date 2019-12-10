@@ -9,6 +9,7 @@ from yolov3_tf2.models import (
 )
 from yolov3_tf2.dataset import transform_images
 from yolov3_tf2.utils import draw_outputs
+import platformer
 
 flags.DEFINE_string('classes', './data/coco.names', 'path to classes file')
 flags.DEFINE_string('weights', './checkpoints/yolov3.tf',
@@ -19,7 +20,6 @@ flags.DEFINE_string('image', './data/girl.png', 'path to input image')
 flags.DEFINE_string('output', './output.jpg', 'path to output image')
 flags.DEFINE_integer('num_classes', 80, 'number of classes in the model')
 
-import platformer
 
 def main(_argv):
     if platformer.get_platform() != 'OS X':

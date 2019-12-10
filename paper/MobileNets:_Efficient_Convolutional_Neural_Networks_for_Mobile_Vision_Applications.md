@@ -4,8 +4,9 @@
 * **Authors**: Andrew G. Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, Hartwig Adam
 * **Link**: https://arxiv.org/pdf/1704.04861.
 * **Code**: https://github.com/tensorflow/tfjs-models
-* **Code for transfer learning**: https://github.com/pytorch/vision/blob/master/torchvision/models/mobilenet.py
-* **Code for Android demo**: https://github.com/tensorflow/examples/tree/master/lite/examples/posenet/android
+* **Code for mobilenet Python**: https://github.com/pytorch/vision/blob/master/torchvision/models/mobilenet.py
+* **Code for posenet Android**: https://github.com/tensorflow/examples/tree/master/lite/examples/posenet/android
+* **Code for posenet Python**: https://github.com/rwightman/posenet-python
 * **Tags**: Neural Network, Mobile, Depthwise Convolution
 * **Year**: 2017
 

@@ -16,10 +16,42 @@ flags.DEFINE_string('weights', './checkpoints/yolov3.tf',
                     'path to weights file')
 flags.DEFINE_boolean('tiny', False, 'yolov3 or yolov3-tiny')
 flags.DEFINE_integer('size', 416, 'resize images to')
-flags.DEFINE_string('image', './data/girl.png', 'path to input image')
+flags.DEFINE_string('image', './data/street.jpg', 'path to input image')
 flags.DEFINE_string('output', './output.jpg', 'path to output image')
 flags.DEFINE_integer('num_classes', 80, 'number of classes in the model')
 
+
+def _shrink_dimension(boxes, scores, classes, nums):
+    len0 = nums[0]
+    classes = classes[0][0:len0]
+    logging.info(classes)
+
+    mask1 = classes.numpy() == 0
+    logging.info(mask1)
+
+    classes = classes[0:len0]
+    classes = tf.boolean_mask(classes, mask1)
+    logging.info(classes)
+
+    scores = scores[0][0:len0]
+    scores = tf.boolean_mask(scores, mask1)
+    logging.info(scores)
+
+    boxes = boxes[0][0:len0]
+    boxes = tf.boolean_mask(boxes, mask1)
+    logging.info(boxes)
+
+    return boxes, scores, classes
+
+def _print_person_score_boxes(boxes, scores):
+    for i in range(len(scores)):
+        logging.info(' [{}]: {}, {}'.format(i, scores[i], np.array(boxes[i])))
+
+def _draw_output_image(boxes, scores, classes, class_names):
+    img = cv2.imread(FLAGS.image)
+    img = draw_outputs(img, (boxes, scores, classes), class_names)
+    cv2.imwrite(FLAGS.output, img)
+    logging.info('output saved to: {}'.format(FLAGS.output))
 
 def main(_argv):
     if platformer.get_platform() != 'OS X':
@@ -27,6 +59,8 @@ def main(_argv):
         if len(physical_devices) > 0:
             tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
+    logging.info(FLAGS.num_classes)
+    
     if FLAGS.tiny:
         yolo = YoloV3Tiny(classes=FLAGS.num_classes)
     else:
@@ -46,17 +80,13 @@ def main(_argv):
     boxes, scores, classes, nums = yolo(img)
     t2 = time.time()
     logging.info('time: {}'.format(t2 - t1))
+    
+    boxes, scores, classes = _shrink_dimension(boxes, scores, classes, nums)
+    
+    _print_person_score_boxes(boxes, scores)
+    
+    _draw_output_image(boxes, scores, classes, class_names)
 
-    logging.info('detections:')
-    for i in range(nums[0]):
-        logging.info('\t{}, {}, {}'.format(class_names[int(classes[0][i])],
-                                           np.array(scores[0][i]),
-                                           np.array(boxes[0][i])))
-
-    img = cv2.imread(FLAGS.image)
-    img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
-    cv2.imwrite(FLAGS.output, img)
-    logging.info('output saved to: {}'.format(FLAGS.output))
 
 if __name__ == '__main__':
     try:

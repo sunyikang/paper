@@ -1,0 +1,15 @@
+// TODO YK P3: make it generic and upload to git
+{
+    "python.pythonPath": "/Users/yikangsun/opt/anaconda3/envs/py374tf20cv412/bin/python", 
+    "python.envFile": "${workspaceRoot}/vscode.env",
+    "python.venvPath": "/Users/yikangsun/opt/anaconda3/envs/py374tf20cv412/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvironment": true,
+    "python.linting.pylintArgs": [
+        "--disable=all",
+        "--enable=F,E,unreachable,duplicate-key,unnecessary-semicolon,global-variable-not-assigned,unused-variable,binary-op-exception,bad-format-string,anomalous-backslash-in-string,bad-open-mode"
+    ]
+    // "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras", "--ignore=E0401"],
+    // "python.linting.pylintUseMinimalCheckers": true
+}

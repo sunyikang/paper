@@ -29,6 +29,22 @@ P5: hide info that is not worth to expose
 P6: one level abstraction per level
 """
 
+if __name__ == '__main__':
+    try:
+        app.run(main)
+    except SystemExit:
+        pass
+
+
+def main(_argv):
+    _setup_memory_growth()
+
+    yolo = _prepare_yolo(FLAGS.tiny, FLAGS.num_classes, FLAGS.weights)
+    img = _prepare_image(FLAGS.image, FLAGS.size)
+    boxes, scores, classes, nums = _yolo_evaluate_image(yolo, img)
+
+    _output_results(FLAGS.classes, FLAGS.image, boxes, scores, classes, nums)
+
 
 def _setup_memory_growth():
     if platformer.get_platform() != 'OS X':
@@ -36,37 +52,51 @@ def _setup_memory_growth():
         if len(physical_devices) > 0:
             tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-            
+
+def _prepare_yolo(tiny, num_classes, weights):
+    _create_yolo(tiny, num_classes)
+    _yolo_load_weight(yolo, weights)
+    return yolo
+
+
 def _create_yolo(tiny, num_classes):
     if tiny:
         return YoloV3Tiny(classes=num_classes)
     else:
         return YoloV3(classes=num_classes)
 
-def _load_weight(yolo, weights):
+
+def _yolo_load_weight(yolo, weights):
     yolo.load_weights(weights)
     logging.info('weights loaded')
-    
-    
-def _load_class_names(classes):
-    class_names = [c.strip() for c in open(classes).readlines()]
-    logging.info('classes loaded')
-    return class_names
-   
-    
+
+
 def _prepare_image(image, size):
     img = tf.image.decode_image(open(image, 'rb').read(), channels=3)
     img = tf.expand_dims(img, 0)
     img = transform_images(img, size)
     return img
-    
-    
+
+
 def _yolo_evaluate_image(yolo, img):
     t1 = time.time()
     boxes, scores, classes, nums = yolo(img)
     t2 = time.time()
     logging.info('time: {}'.format(t2 - t1))
     return boxes, scores, classes, nums
+
+
+def _output_results(classes_file, image, boxes, scores, classes, nums):
+    class_names = _load_class_names(classes_file)
+    _print_score_boxes_per_class(class_names, scores, boxes)
+    _draw_outputs_on_image_and_save_it(
+        image, boxes, scores, classes, nums, class_names)
+
+
+def _load_class_names(classes):
+    class_names = [c.strip() for c in open(classes).readlines()]
+    logging.info('classes loaded')
+    return class_names
 
 
 def _print_score_boxes_per_class(class_names, scores, boxes):
@@ -76,37 +106,9 @@ def _print_score_boxes_per_class(class_names, scores, boxes):
                                            np.array(scores[0][i]),
                                            np.array(boxes[0][i])))
 
-        
-def _draw_outputs_on_image_and_save_it(imagepath, (boxes, scores, classes, nums), class_names):
+
+def _draw_outputs_on_image_and_save_it(imagepath, boxes, scores, classes, nums, class_names):
     img = cv2.imread(imagepath)
     img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
     cv2.imwrite(FLAGS.output, img)
     logging.info('output saved to: {}'.format(FLAGS.output))
-
-    
-def _prepare_yolo(FLAGS.tiny, FLAGS.num_classes, FLAGS.weights)
-    _create_yolo(FLAGS.tiny, FLAGS.num_classes)
-    _yolo_load_weight(yolo, FLAGS.weights)
-    return yolo
-
-
-def _output_results(FLAGS.classes, FLAGS.image, boxes, scores, classes, nums):
-    class_names = _load_class_names(FLAGS.classes)
-    _print_score_boxes_per_class(class_names, scores, boxes)
-    _draw_outputs_on_image_and_save_it(FLAGS.image, (boxes, scores, classes, nums), class_names)
-
-
-def main(_argv):
-    _setup_memory_growth()
-    
-    yolo = _prepare_yolo(FLAGS.tiny, FLAGS.num_classes, FLAGS.weights)
-    img = _prepare_image(FLAGS.image, FLAGS.size)
-    boxes, scores, classes, nums = _yolo_evaluate_image(yolo, img)
-    
-    _output_results(FLAGS.classes, FLAGS.image, boxes, scores, classes, nums)
-    
-if __name__ == '__main__':
-    try:
-        app.run(main)
-    except SystemExit:
-        pass

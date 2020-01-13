@@ -4,7 +4,7 @@ Summaries of machine learning papers.
 
 ## Added 2020 Jan
 
-- 2018 | **POSE ESTIMATION, MOBILE** | [PoseNet](https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5) | [js code](code/mobilenet-tf/posenet/README.md) | [python code](code/posenet-py/README.md)
+- 2018 | **POSE ESTIMATION, MOBILE** | [PoseNet](https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5) | [js code](code/mobilenet-tf/posenet/README.md) | [python tf code](code/posenet-py/README.md) | [python pytorch code](https://github.com/rwightman/posenet-pytorch)
 
 ## Added 2019 Dec
 

@@ -1,6 +1,16 @@
 import os
 from openai import OpenAI
 
+# How to input the ENVIRONMENT into mac:
+# 1 (open file)
+# nano ~/.bash_profile
+# 2 (add below context)
+# export OPENAI_ORGANIZATION="org-jqpcCgmVU2S09JEQeCFbwIV7"
+# export OPENAI_API_KEY="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"
+# export OPENAI_PROJECT_ID="proj_mRGIs9hHJz9uFCbunHj8xIHx"
+# 3 (execute)
+# source ~/.bash_profile
+
 print(os.getenv('OPENAI_ORGANIZATION'))
 print(os.getenv('OPENAI_PROJECT_ID'))
 print(os.getenv('OPENAI_API_KEY'))

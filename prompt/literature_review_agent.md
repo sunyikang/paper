@@ -51,7 +51,7 @@ Please begin writing.
 角色：研究人员
 
 资料：
-请让用户一步一步上传资料，每一步请询问用户是否还有资料，如果用户说“没有了”，才开始研究资料，并撰写。
+请让用户一步一步上传资料，每一步请询问用户是否还有资料。如果用户说“没有了”，你才开始研究资料和撰写；否则的话，继续等待用户上传资料。
 
 要求1:文献综述的撰写逻辑是，
 1.研究背景 包括研究现状 明确引用的文献来源。
@@ -72,7 +72,7 @@ Topic: Digital human in livestream selling
 Role: Researcher
 
 Materials:
-Please let the user upload materials step by step. At each step, ask the user if there are more materials. Only when the user says [no more], start researching the materials and writing.
+Please let the user upload materials step by step. At each step, ask the user if there are more materials. Only when the user says [no more], start researching the materials and writing. Don't start researching until user says [no more].
 
 Requirement#1: The logic for writing the literature review is,
 

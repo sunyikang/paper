@@ -1,15 +1,17 @@
 import os
 from openai import OpenAI
 
+# export OPENAI_ORGANIZATION="org-jqpcCgmVU2S09JEQeCFbwIV7"
 # export OPENAI_API_KEY="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"
 # export OPENAI_PROJECT_ID="proj_mRGIs9hHJz9uFCbunHj8xIHx"
 
+print(os.getenv('OPENAI_ORGANIZATION'))
 print(os.getenv('OPENAI_PROJECT_ID'))
 print(os.getenv('OPENAI_API_KEY'))
 
 client = OpenAI(
     # This is the default and can be omitted
-    organization='org-jqpcCgmVU2S09JEQeCFbwIV7',
+    organization=os.getenv('OPENAI_ORGANIZATION'),
     project=os.getenv('OPENAI_PROJECT_ID'),
     api_key=os.getenv('OPENAI_API_KEY'),
 )

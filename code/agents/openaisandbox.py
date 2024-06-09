@@ -6,8 +6,8 @@ from openai import OpenAI
 # nano ~/.bash_profile
 # 2 (add below context)
 # export OPENAI_ORGANIZATION="org-jqpcCgmVU2S09JEQeCFbwIV7"
-# export OPENAI_API_KEY="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"
 # export OPENAI_PROJECT_ID="proj_mRGIs9hHJz9uFCbunHj8xIHx"
+# export OPENAI_API_KEY="sk-proj-GbQFFJ70XS1erfQotTKkT3BlbkFJkKr9O9TK96Hm5jAJxjtE"
 # 3 (execute)
 # source ~/.bash_profile
 
@@ -39,7 +39,7 @@ for model in models:
 
 # make a simple query
 response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
+    model="gpt-4o",
     messages=[
         {"role": "system", "content": "你是一个有帮助的助手。"},
         {

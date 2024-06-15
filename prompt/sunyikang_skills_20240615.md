@@ -1,12 +1,12 @@
 Company Level
 - Business Acumen 5
 - Technology Vision and Strategy 5
-- Products Roadmap Management 5
+- Technology Roadmap Management 5
 
 Department Level
 - Department Matrix Management 5
 - Department Appraisal Management 5
-- Leaders' Leadership Traning 5
+- Leaders' Leadership Training 5
 - Patent Management 5
 - Compliance and Risk Management 5 
 - Innovation and R&D 5

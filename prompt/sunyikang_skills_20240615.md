@@ -13,12 +13,13 @@ Department Level
 
 Team Level Management
 - Product Management 5
-- Design Management 5
 - Project Management 5
+- Design & Development Management 5
+- Agile Methodology 5
 - Stakeholders Management 5
 
 Financial Skills
-- Vendors Management 4
+- Vendors Management 5
 - Budgeting 5
 - ROI Analysis 5
 
@@ -33,7 +34,6 @@ Technical Basic Skills
 - System Architecture 5
 
 
-
 IoT Development Skills
 - Cloud Development 5
 - App Development 5
@@ -45,10 +45,10 @@ IoT Development Skills
 
 AI & Machine Learning Skills
 - Computer Vision 5
+- Natural language processing 3
 - Supervised Learning 5
 - Unsupervised Learning 5
-- Deep Learning 5
-- Neural Networks 5
+- Deep Learning & Neural Networks 5
 - Generative AI Prompt 5
 - Generative AI Application 3
 

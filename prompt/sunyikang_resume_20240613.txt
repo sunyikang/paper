@@ -1,0 +1,74 @@
+Sun Yikang
+Contact Information
+Phone: +65 9736 5696
+Email: sunyikang@gmail.com
+LinkedIn: sun-yikang
+
+Career Summary
+Experienced Digital Technology Director with 18 years of expertise in AI, IoT, healthcare, and tech management. Proven ability to lead cross-functional teams, drive innovation, and implement agile methodologies to enhance productivity and product quality. Seeking to leverage extensive technical and leadership skills to drive innovation in homeland security as Head of Engineering at HTX.
+
+Professional Experience
+OSIM International, Singapore
+Associate Director and Head of Digital Technology Department
+July 2020 – Present
+
+Led a team of 40+ digital professionals in transitioning the company's strategy from well-being products to a comprehensive well-being ecosystem.
+Managed the digitization of products and operational processes, implementing AI technologies such as voice control, body analysis, and face recognition.
+Introduced matrix management, agile (scrum) methodologies, and a 360-degree appraisal review policy to foster a flat and collaborative culture.
+Built a cloud service platform and a post-sale service digitalization system to support world-class data collection and analysis.
+Solved the chips crisis by engaging engineers to find alternative solutions and implemented a new KPI and OKR system for transparent and fair appraisal.
+AI Singapore, Singapore
+AI Apprentice
+September 2019 – July 2020
+
+Studied machine learning theory, including supervised learning, unsupervised learning, deep learning, neural networks, and convolutional neural networks.
+Worked on two computer vision projects using Python, TensorFlow, Pytorch, VueJS, Flask, UML, Docker, and GPU for model training.
+EnaChina, China
+R&D Director and Software Architect
+February 2018 – September 2019
+
+Led a team to develop the “Intelligent Air Purifier System” IoT clouding system, spanning backend, frontend, mobile app, payment system, and intelligent devices.
+Successfully transformed a concept into a profitable product.
+nuTonomy Asia, Singapore
+Senior Software Engineer
+February 2017 – February 2018
+
+Designed and developed the “3D driverless Car Simulation and Testing System” for simulating, testing, and verifying self-driving car’s core algorithm in a virtual 3D world.
+Improved point cloud precision and optimized performance by distributing ray-casting compute to GPU.
+AniTalker, Singapore
+Founder & CTO
+March 2016 – February 2017
+
+Developed the AniTalker app to create vivid teaching material using photos and voice on iPhone or iPad.
+Established AniTalker Pte. Ltd, defining the share structure, benefit policy, and product & business model strategy.
+Autodesk, Singapore & China
+Software Engineer
+October 2010 – March 2016, May 2006 – February 2009
+
+Developed features for MotionBuilder and Maya, including character animation, animation curve editor, UI, and motion capture plugins.
+Proactively created tools that accelerated the animation cycle creation process, receiving positive feedback from top gaming companies.
+Institute of Technical Education (ITE), Singapore
+Software Engineer & Lecturer
+February 2009 – October 2010
+
+Taught game programming and developed 3D games on Xbox 360 and Windows Phone.
+Education
+Master of Pattern Recognition and Intelligent Control
+Northwestern Polytechnical University, China
+2003 – 2006
+Bachelor of Computer Security
+Northwestern Polytechnical University, China
+1999 – 2003
+
+Key Skills
+AI & Machine Learning: Computer Vision, Supervised Learning, Unsupervised Learning, Deep Learning, Neural Networks, TensorFlow, Machine Learning Based Data Analysis
+Healthcare Technologies: Anura, Binah, ECG, Mobile based PPG
+IoT Development: Cloud, App, Web, Embedded Communication PCB Development, App based Data Tracking and Analysis
+Tech Management: Decision Making, ROI Analysis, Market Prediction, Strategic Planning, Team Management, Project Management, Product Management
+Certifications
+Neural Networks and Deep Learning
+Issued on October 19, 2019 | Grade Achieved: 97.1%
+Chartered AI Engineer Level 1
+by AI Professionals Association | Issued Aug 2021 | Expires Aug 2024 | Credential ID 40072252
+AI Certified Engineer Level I
+by AI Singapore | Issued Jun 2020 | Credential ID 19039950
